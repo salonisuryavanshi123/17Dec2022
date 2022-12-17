@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple calculator using HTML Form</title>
+    </head>
+    <body>
+        <form style="display: inline-block;">
+            <input type="text" name="number1" size="4">
+            <select name="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="number2" size="4">
+            <input type="button" value="=" onclick="saloni('Hy')">
+        </form>
+        <span id="result" style="display: inline-block;"></span>
+        
+        <script>
+            //Global Variable
+            var n1 = document.querySelector("input[name=\"number1\"]"); //object.method
+            let n2 = document.querySelector("input[name=\"number2\"]"); 
+
+            //1. Function Defination
+
+            let rslt = document.getElementById("result");
+            let op = document.querySelector('select[name="operator"]');
+
+            function saloni(okay){ //formal argument
+                //function body
+
+                //Explicit Conversion from string to number
+                var x = parseFloat(n1.value);
+                var y = parseFloat(n2.value);
+                /*
+                switch(expression){
+                    case x:
+                        //code block
+                        break;
+                    case y:
+                        //code block
+                        break;
+                    defult:
+                        //code block
+                    }           
+                }
+                */
+               console.log(op.value);
+               switch(op.value){
+                case '+':
+                    console.log(x + y);
+                    rslt.innerHTML = x + y;
+                    break;
+                    
+                case '-':
+                    console.log(x - y);
+                    rslt.innerHTML = x - y;
+                    break;
+                    
+                case '*':
+                    console.log(x * y);
+                    rslt.innerHTML = x * y;
+                    break;
+
+                case '/':
+                    console.log(x / y);
+                    rslt.innerHTML = x / y;
+                    break;
+                    
+                defult:
+                    console.log("Invalid operator");
+               }
+            }
+        </script>
+    </body>
+</html>
